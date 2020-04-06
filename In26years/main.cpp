@@ -7,9 +7,13 @@
 //
 
 #include <iostream>
+#include "part01.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
+    std::cout << "Miss you, \n";
+    page_5();
+    page_10(3);
     return 0;
 }
