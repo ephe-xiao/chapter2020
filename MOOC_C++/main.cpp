@@ -6,26 +6,20 @@
 //  Copyright © 2020年 xiaoqiang. All rights reserved.
 //
 
-#include <iostream>
+
+#include "textrank.hpp"
+
+using std::vector;
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int **p1, *p2;
-    int v = 42, &r = v;
-       p1 = &p2;
-    p2 = &v;
-    std::cout << p1 << "\n" << *p1 << "\n";
-    std::cout << p2 << "\n" << *p2 << "\n";
-    std::cout << r << "\n" << &r << "\n";
-    v = 45;
-    std::cout << p1 << "\n" << *p1 << "\n";
-    std::cout << p2 << "\n" << *p2 << "\n";
-    std::cout << r << "\n" << &r << "\n";
-    r = 48;
-    std::cout << p1 << "\n" << *p1 << "\n";
-    std::cout << p2 << "\n" << *p2 << "\n";
-    std::cout << r << "\n" << &r << "\n";
-    std::cout << "Hello, World!\n";
-    std::cout << v;
+    double d=0.2;
+    vector<vector<double>> graph;
+    graph.push_back({1, 2, 3});
+    graph.push_back({2, 4, 5});
+    graph.push_back({3, 5, 7});
+    std::cout << "Hello world!" << "\n";
+    TextRank c1(graph, d);
     return 0;
-}
+};
