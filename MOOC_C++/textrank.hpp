@@ -13,21 +13,30 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <utility>
 
+using namespace std;
 using std::vector;
+
+class Node{
+public:
+    int name = 0;
+    vector<pair<int, double>> sides;
+    Node(int a);
+    Node add_edge(int x, double c);
+};
 
 class TextRank{
 private:
-    int d;
-    unsigned long N;
-    int size;
-    vector<double> rank;
+    unsigned long __len__;
     vector<double> weight;
-    vector<vector<double>> graph;
+    vector<Node> graph;
 public:
+    vector<double> rank;
     TextRank();
-    TextRank(vector<vector<double>> A, int b);
-    //void _rank();
+    TextRank add_edge(int a, int b, double c);
+    TextRank graph_rank(double d);
+    TextRank init_rank();
 };
 
 #endif /* textrank_hpp */
