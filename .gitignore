@@ -32,5 +32,5 @@
 *.app
 
 # Xcode9.1
-*.xocdeproj
+*.xcodeproj
 *.DS_Store
