@@ -16,14 +16,13 @@
 #include <utility>
 
 using namespace std;
-using std::vector;
 
 class Node{
 public:
     int name = 0;
     vector<pair<int, double>> sides;
     Node(int a);
-    Node add_edge(int x, double c);
+    void add_edge(int x, double c);
 };
 
 class TextRank{

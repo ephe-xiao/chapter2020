@@ -12,25 +12,27 @@ Node::Node(int a){
     this->name = a;
 };
 
-Node Node::add_edge(int x, double b){
+void Node::add_edge(int x, double b){
     pair<int, double> c(x, b);
     this->sides.push_back(c);
-    return *this;
 };
 
-TextRank TextRank::add_edge(int a, int b, double c){
-    auto it = graph.begin();
-    if ((*it).name == (a - 1)){
-        (*it).add_edge(b, c);
+TextRank TextRank::add_edge(int a, int b, double c){ // a,b should be >= 1;
+    unsigned long i = __len__;
+    if (i < a){
+        while (i < a){
+            Node n(a);
+            graph.push_back(n);
+            ++i;
+        };
+        graph[i - 1].add_edge(b, c);
     }
     else {
-        Node n(a);
-        graph.push_back(n);
-        ++it;
-        (*it).add_edge(b, c);
+        graph[a - 1].add_edge(b, c);
     };
-    std::cout << "无向有环图初始化完成\n";
-    std::cout << "顶点数:" << graph.size() << "\n";
+    __len__ = graph.size();
+    std::cout << "无向有环图插入完成\n";
+    std::cout << "当前顶点数:" << __len__ << "\n";
     return *this;
 };
 
@@ -39,7 +41,7 @@ TextRank TextRank::add_edge(int a, int b, double c){
      for (auto it = graph.begin(); it != graph.end(); ++it){
          r = 0;
          for (auto jt = (*it).sides.begin(); jt != (*it).sides.end(); ++jt){
-             r += rank[(*jt).first] * (*jt).second / weight[(*jt).first];
+             r += rank[(*jt).first - 1] * (*jt).second / weight[(*jt).first - 1];
          }
          this->rank[it - graph.begin()] = (1 - d) * r + d;
      };
@@ -59,6 +61,9 @@ TextRank TextRank::init_rank(){
     return *this;
 };
 TextRank::TextRank(){
+    Node n(1);
+    graph.push_back(n);
+    __len__ = graph.size();
     std::cout << "Hello world!" << "\n";
     std::cout << "Hello world!" << "\n";
 };
