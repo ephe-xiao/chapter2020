@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB8A5F13243E141F00C82E4D /* textrank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB8A5F11243E141F00C82E4D /* textrank.cpp */; };
 		FBAE284A2438C11400C81A98 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBAE28492438C11400C81A98 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB8A5F11243E141F00C82E4D /* textrank.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = textrank.cpp; sourceTree = "<group>"; };
+		FB8A5F12243E141F00C82E4D /* textrank.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = textrank.hpp; sourceTree = "<group>"; };
+		FB8A5F142440DA6E00C82E4D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FBAE28462438C11400C81A98 /* MOOC_C++ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "MOOC_C++"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBAE28492438C11400C81A98 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +45,7 @@
 		FBAE283D2438C11400C81A98 = {
 			isa = PBXGroup;
 			children = (
+				FB8A5F142440DA6E00C82E4D /* .gitignore */,
 				FBAE28482438C11400C81A98 /* MOOC_C++ */,
 				FBAE28472438C11400C81A98 /* Products */,
 			);
@@ -58,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				FBAE28492438C11400C81A98 /* main.cpp */,
+				FB8A5F11243E141F00C82E4D /* textrank.cpp */,
+				FB8A5F12243E141F00C82E4D /* textrank.hpp */,
 			);
 			path = "MOOC_C++";
 			sourceTree = "<group>";
@@ -119,6 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB8A5F13243E141F00C82E4D /* textrank.cpp in Sources */,
 				FBAE284A2438C11400C81A98 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
