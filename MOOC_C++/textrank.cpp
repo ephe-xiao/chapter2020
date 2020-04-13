@@ -36,16 +36,17 @@ TextRank TextRank::add_edge(int a, int b, double c){ // a,b should be >= 1;
     return *this;
 };
 
- TextRank TextRank::graph_rank(double d){
-     double r;
+const vector<double> & TextRank::graph_rank(double d){
+     double r0;
      for (auto it = graph.begin(); it != graph.end(); ++it){
-         r = 0;
+         r0 = 0;
          for (auto jt = (*it).sides.begin(); jt != (*it).sides.end(); ++jt){
-             r += rank[(*jt).first - 1] * (*jt).second / weight[(*jt).first - 1];
+             r0 += rank[(*jt).first - 1] * (*jt).second / weight[(*jt).first - 1];
          }
-         this->rank[it - graph.begin()] = (1 - d) * r + d;
+         this->rank[it - graph.begin()] = (1 - d) * r0 + d;
      };
-     return *this;
+     const vector<double> &ra = rank;
+     return ra;
  };
 
 TextRank TextRank::init_rank(){
@@ -60,6 +61,7 @@ TextRank TextRank::init_rank(){
     };
     return *this;
 };
+
 TextRank::TextRank(){
     Node n(1);
     graph.push_back(n);

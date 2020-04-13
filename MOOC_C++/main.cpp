@@ -24,11 +24,12 @@ int main(int argc, const char * argv[]) {
     graph.add_edge(4, 2, 1);
     graph = graph.init_rank();
     for (int i = 0; i <= 10; ++i){
-        graph = graph.graph_rank(d);
+        const vector<double> &r = graph.graph_rank(d);
         cout << "第" << i+1 << "次迭代后Rank值:\n";
-        for (auto it = graph.rank.begin(); it != graph.rank.end(); ++it){
-            cout << (*it) << "\t";
-        };
+        cout << r[0];
+        //for (auto it = graph.rank.begin(); it != graph.rank.end(); ++it){
+        //    cout << (*it) << "\t";
+        //};
         cout << "\n";
     };
     return 0;

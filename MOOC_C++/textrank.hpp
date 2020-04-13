@@ -34,7 +34,7 @@ public:
     vector<double> rank;
     TextRank();
     TextRank add_edge(int a, int b, double c);
-    TextRank graph_rank(double d);
+    const vector<double> & graph_rank(double d);
     TextRank init_rank();
 };
 
