@@ -16,12 +16,12 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     double d=0.15;
     TextRank graph;
-    graph.add_edge(1, 3, 1);
+    graph.add_edge(1, 2, 1);
     graph.add_edge(2, 3, 1);
-    graph.add_edge(2, 4, 1);
+    graph.add_edge(2, 7, 1);
     graph.add_edge(3, 1, 1);
     graph.add_edge(3, 2, 1);
-    graph.add_edge(4, 2, 1);
+    graph.add_edge(7, 2, 1);
     graph = graph.init_rank();
     for (int i = 0; i <= 10; ++i){
         const vector<double> &r = graph.graph_rank(d);

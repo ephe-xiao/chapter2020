@@ -18,17 +18,18 @@ void Node::add_edge(int x, double b){
 };
 
 TextRank TextRank::add_edge(int a, int b, double c){ // a,b should be >= 1;
-    unsigned long i = __len__;
+    int i = __len__;
     if (i < a){
         while (i < a){
-            Node n(a);
-            graph.push_back(n);
             ++i;
+            Node n(i + 1);
+            graph.push_back(n);
         };
-        graph[i - 1].add_edge(b, c);
+        assert(i == a);
+        graph[i - 1].add_edge(b - 1, c);
     }
     else {
-        graph[a - 1].add_edge(b, c);
+        graph[a - 1].add_edge(b - 1, c);
     };
     __len__ = graph.size();
     std::cout << "无向有环图插入完成\n";
@@ -41,7 +42,7 @@ const vector<double> & TextRank::graph_rank(double d){
      for (auto it = graph.begin(); it != graph.end(); ++it){
          r0 = 0;
          for (auto jt = (*it).sides.begin(); jt != (*it).sides.end(); ++jt){
-             r0 += rank[(*jt).first - 1] * (*jt).second / weight[(*jt).first - 1];
+             r0 += rank[(*jt).first] * (*jt).second / weight[(*jt).first];
          }
          this->rank[it - graph.begin()] = (1 - d) * r0 + d;
      };
